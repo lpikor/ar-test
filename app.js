@@ -61,3 +61,25 @@ function displayPredictions(predictions) {
     hudContainer.appendChild(box);
   });
 }
+
+const batteryHud = document.querySelector('.battery');
+
+// Sprawdzanie dostępności API
+if ('getBattery' in navigator) {
+  navigator.getBattery().then(function(battery) {
+	updateBatteryStatus(battery);
+
+	// Reagowanie na zmiany stanu baterii
+	battery.addEventListener('levelchange', function() {
+	  updateBatteryStatus(battery);
+	});
+  });
+} else {
+  batteryHud.textContent = 'API Battery Status nie jest obsługiwane w tej przeglądarce.';
+}
+
+// Aktualizowanie stanu baterii na stronie
+function updateBatteryStatus(battery) {
+  var batteryLevel = Math.round(battery.level * 100) + '%';
+  batteryHud.textContent = batteryLevel;
+}

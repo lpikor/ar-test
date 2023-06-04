@@ -2,7 +2,45 @@
 <html>
 <head>
   <title>HUD App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <style>
+	:root {
+		--hud-background: #007490ab;
+		--hud-text: #ffffff;
+	}
+
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	body {
+		position: relative;
+		font-family: 'Poppins';
+	}
+
+	.hud {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 6.1px;
+		left: 0;
+	}
+
+	.battery {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		background: var(--hud-background);
+		color: #ffffff;
+		font-size: 4rem;
+		padding: 1rem;
+		border-top-left-radius: 50%;
+	}
+
     #videoElement {
       width: 100%;
       height: auto;
@@ -27,6 +65,9 @@
 <body>
   <video id="videoElement" autoplay></video>
   <div id="hudContainer"></div>
+  <div class="hud">
+	<div class="battery">95</div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script>
   <script src="app.js"></script>
