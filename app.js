@@ -11,3 +11,5 @@ navigator.mediaDevices.getUserMedia({ video: true })
   .catch(function (error) {
     console.log('Wystąpił błąd podczas uzyskiwania dostępu do kamery:', error);
   });
+
+  alert('mobile test');
