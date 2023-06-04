@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>HUD App</title>
+  <style>
+    #videoElement {
+      width: 100%;
+      height: auto;
+    }
+
+    .prediction-box {
+      position: absolute;
+      border: 2px solid red;
+      pointer-events: none;
+    }
+
+    .prediction-label {
+      background-color: red;
+      color: white;
+      font-size: 12px;
+      padding: 4px;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <video id="videoElement" autoplay></video>
+  <div id="hudContainer"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.9.0/dist/tf.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.2/dist/coco-ssd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
