@@ -2,6 +2,8 @@
 const videoElement = document.getElementById('videoElement');
 const hudContainer = document.getElementById('hudContainer');
 
+alert('mobile test');
+
 // Sprawdzenie dostępności kamery
 navigator.mediaDevices.getUserMedia({ video: true })
   .then(function (stream) {
@@ -11,5 +13,3 @@ navigator.mediaDevices.getUserMedia({ video: true })
   .catch(function (error) {
     console.log('Wystąpił błąd podczas uzyskiwania dostępu do kamery:', error);
   });
-
-  alert('mobile test');
