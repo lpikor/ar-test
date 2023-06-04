@@ -2,7 +2,7 @@
 const videoElement = document.getElementById('videoElement');
 const hudContainer = document.getElementById('hudContainer');
 
-alert('mobile test');
+alert('mobile test 2');
 
 // Sprawdzenie dostępności kamery
 navigator.mediaDevices.getUserMedia({ video: true })
